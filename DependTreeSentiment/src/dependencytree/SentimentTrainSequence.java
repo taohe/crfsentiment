@@ -117,17 +117,15 @@ public class SentimentTrainSequence implements DataSequence {
     /**
      * Return the NAIVE label: sentimental polarity of the sub-tree rooted
      * at index i: dataSequence.getPhraseListArgu().phraseList[i]
-     * ---- This version is VERY CRUDE now  (Correct rate= 0.558 for 2 train files and Apex test file)
+     * ---- This version is VERY CRUDE now
      * @return    1 for Positive sentiment; 2 for Negative sentiment
      */
-    /*
     public void updateHeuristicLabels() {
         int sentencePolar = (parseTreeSequence.getPhraseListArgu().isPos)? 1 : 2;
         for (int i = 0; i < absoluteLength(); i++) {
             heuristicLabels[i] = sentencePolar;
         }
     }
-    */
 
     /**
      * Simple heuristics for assigning polarity for each token:
@@ -136,6 +134,7 @@ public class SentimentTrainSequence implements DataSequence {
      * For first token: "ROOT", always set as the sentence polarity(definite for training data)
      * Label is 1: Pos, 2: Neg, 3: Neutral
      */
+    /*
     public void updateHeuristicLabels() {
         // Label on [0] is always definite for training data
         int sentencePolar = (parseTreeSequence.getPhraseListArgu().isPos)? 1:2;
@@ -163,6 +162,7 @@ public class SentimentTrainSequence implements DataSequence {
             }
         }
     }
+    */
 
     /**
      * Return label based on simple heuristics (Use polarityReversal Dictionary)

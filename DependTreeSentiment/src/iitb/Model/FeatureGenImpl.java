@@ -120,10 +120,10 @@ public class FeatureGenImpl implements FeatureGeneratorNested {
         addFeature(new PrePolarReverseFeatures(this, dict, loadPriorPolarityFeature.getPolarityReversalSet(),
                 loadPriorPolarityFeature.getPriorPolarityMap()));
         /**
-         * Another new FeatureType: PolarReversal(head index)Features -- (Not useful, lower test score)
+         * Another new FeatureType: PolarReversal(head index)Features
          */
-        //addFeature(new PolarReverseFeatures(this, dict, loadPriorPolarityFeature.getPolarityReversalSet(),
-        //        loadPriorPolarityFeature.getPriorPolarityMap()));
+        addFeature(new PolarReverseFeatures(this, dict, loadPriorPolarityFeature.getPolarityReversalSet(),
+                loadPriorPolarityFeature.getPriorPolarityMap()));
     }
 
     protected FeatureTypes getFeature(int i) {
