@@ -4,6 +4,7 @@ import iitb.CRF.DataIter;
 import iitb.CRF.DataSequence;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
@@ -41,6 +42,11 @@ public class SentimentDataIter implements DataIter {
         this.isTrain = isTrainData;
 
         scanFilesLoadData(isTrainData);
+        if (isTrainData) {
+            Collections.shuffle(this.trainSequenceList);
+        } else {
+            Collections.shuffle(this.testSequenceList);
+        }
     }
 
     /**
